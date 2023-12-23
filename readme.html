@@ -1,0 +1,33 @@
+<html>
+The NEURON and Brian code for the paper:<p/>
+Smith SL, Smith IT, Branco T, Hausser M (2013) Dendritic spikes enhance stimulus selectivity in cortical neurons in vivo. Nature 503:115-20
+doi: <a href="http://dx.doi.org/10.1038/nature12600">http://dx.doi.org/10.1038/nature12600</a>
+<p/>
+is available at the link:<p/>
+<a href="https://github.com/OpenSourceBrain/SmithEtAl2013-L23DendriticSpikes">https://github.com/OpenSourceBrain/SmithEtAl2013-L23DendriticSpikes</a><p/>
+<hr/>
+Example Use:<p/>
+After downloading the model with a command like:<p/>
+git clone https://github.com/OpenSourceBrain/SmithEtAl2013-L23DendriticSpikes
+<p/>
+You can cd to the NEURON/mod.files folder and compile the mod files with
+a command like (linux):<p/>
+nrnivmodl<p/>
+(If you need more help for a different platform please consult this page:)<p/>
+<a href="https://senselab.med.yale.edu/ModelDB/NEURON_DwnldGuide.cshtml">https://senselab.med.yale.edu/ModelDB/NEURON_DwnldGuide.cshtml</a><p/>
+Then in the libcell.py file change the line:<p/>
+#load_mechanisms('/directory_where_mod_files_have_been_compiled')
+<br/>to<br/>
+load_mechanisms('./mod.files')
+<p/>And then run simulations with the command:<p/>
+python main.py
+<p/>
+Finally the command<p/>
+python -i analyse.py<p/>
+<p/>
+Will produce images:<p/>
+<img src="./screenshot.png" alt="screenshot" width="550"><p/>
+similar to the soma and dendritic voltage traces seen
+in the papers supplementary movies:<p/>
+<a href="https://www.nature.com/articles/nature12600#s2">https://www.nature.com/articles/nature12600#s2</a>
+</html>
